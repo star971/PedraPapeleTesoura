@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedra, Papel ou tesoura?</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <!-- barra de informações sobre o jogo -->
+    <div class="hud">
+        <p id="pHUD"> <span id="vitorias">-</span> vitórias</p>
+        <p id="pHUD"> <span id="derrotas">-</span> derrotas</p>
+        <p id="pHUD"> <span id="partidas">-</span> partidas</p>
+    </div>
+
+
+    <!-- Tela que só aparece antes do jogo começar -->
+    <div class="tela-start">
+        <p class="titulo">Pedra, Papel ou Tesoura?</p>
+       
+        <div class="select">Nº de rodadas:
+            <select id="rodadas">
+                <option id="option" value=1>1</option>
+                <option id="option" value=3>3</option>
+                <option id="option" value=5>5</option>
+                <option id="option" value=7>7</option>
+                <option id="option" value=9>9</option>
+            </select>
+        </div>
+
+        <button class="botao" id="botaoStart" onclick="StartGame()">Jogar</button>
+        <div class="Ranking">
+        </div>
+        <p id="creditos">Jogo produzido pela Turma de 3º Período do Técnico em Informática.</p>
+
+    </div>
+
+    <!-- Janela que permanece durante o jogo -->
+    <div class="tela-game">
+       
+        <p class="titulo" id="tituloGame">Vamos lá!</p>
+        <!-- <p ><span id="Momentos">(Provisório)Faça sua escolha.</span></p> -->
+        <div>
+            <p>Rodada <span id="vez">0</span> de <span id="total">0</span></p>
+        </div>
+        <div class="BlocoCartas">
+            <div class="BlocoPlayer">
+                <img class="cartas cartasJogador" id="cartaPedra" onclick="EscolhendoCarta(0)" src="./Arte/pedra.png">
+                <img class="cartas cartasJogador" id="cartaPapel" onclick="EscolhendoCarta(1)" src="./Arte/papel.png">
+                <img class="cartas cartasJogador" id="cartaTesoura" onclick="EscolhendoCarta(2)" src="./Arte/tesoura.png">
+            </div>
+            <div class="BlocoVersus">
+                <p class="titulo">VS</p>
+            </div>
+            <div class="BlocoCPU">
+                <!-- <p>TelaCPU: carta e interação.</p> -->
+                <img class="cartas cartaCPU" id="cartaCPU" src="./Arte/incognita.png">
+            </div>
+        </div>    
+        <button class="botao" id="botaoProximo" onclick="RePlay()">Próximo</button>
+    </div>
+
+
+
+    <!-- Tela que só aparece quando o jogo acaba -->
+    <!-- <div class="tela-fim">
+        <p class="titulo">Fim de Jogo.</p>
+        <button class="botao" id="botaoVoltar" onclick="ResetGame()">Voltar</button>
+
+    </div> -->
+
+</body>
+
+
+
+<script type="text/javascript" src="./app.js"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+
+
+</html>
